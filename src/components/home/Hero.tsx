@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
+import { WaterWrapper } from "@/components/ui/WaterWrapper";
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -18,15 +19,18 @@ export function Hero() {
   return (
     <div ref={containerRef} className="relative h-screen w-full overflow-hidden">
       {/* Background Image with Parallax */}
+      {/* Background Image with Parallax & Water Effect */}
       <motion.div
         style={{ y, opacity }}
         className="absolute inset-0 z-0"
       >
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop')" }}
-        />
-        <div className="absolute inset-0 bg-black/40" />
+        <WaterWrapper
+            imageUrl="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop"
+            dropRadius={25}
+            perturbance={0.03}
+        >
+            <div className="absolute inset-0 bg-black/30" />
+        </WaterWrapper>
       </motion.div>
 
       {/* Content */}

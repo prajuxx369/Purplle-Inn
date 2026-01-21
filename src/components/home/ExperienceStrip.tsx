@@ -9,13 +9,13 @@ const experiences = [
   {
     title: "Fine Dining",
     description: "Savor exquisite culinary delights prepared by world-class chefs.",
-    image: "https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070&auto=format&fit=crop",
     color: "from-purple-900/80 to-stone-900/80",
   },
   {
     title: "Prime Location",
     description: "Nestled in the city's vibrant heart, moments from culture and commerce.",
-    image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2144&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1449824913929-2b3a3e3dbaf0?q=80&w=2070&auto=format&fit=crop",
     color: "from-blue-900/80 to-stone-900/80",
   },
   {
