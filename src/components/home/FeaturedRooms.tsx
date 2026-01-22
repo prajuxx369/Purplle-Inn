@@ -71,12 +71,13 @@ export function FeaturedRooms() {
               transition={{ delay: index * 0.1, duration: 0.6 }}
               className="flex-none w-[85vw] md:w-[45vw] lg:w-[30vw] snap-center group relative cursor-pointer"
             >
-              <div className="aspect-[4/5] md:aspect-[3/4] overflow-hidden rounded-lg mb-6 relative">
+              <div className="relative aspect-4/5 md:aspect-3/4 overflow-hidden rounded-lg mb-6">
                  <div className="absolute inset-0 bg-stone-900/20 group-hover:bg-stone-900/10 transition-colors z-10" />
                  <Image
                     src={room.image}
                     alt={room.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                  />
                  <div className="absolute bottom-0 left-0 right-0 p-6 z-20 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">

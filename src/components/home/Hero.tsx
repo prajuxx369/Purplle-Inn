@@ -25,11 +25,12 @@ export function Hero() {
         className="absolute inset-0 z-0"
       >
         <WaterWrapper
-            imageUrl="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop"
-            dropRadius={25}
-            perturbance={0.03}
+            imageUrl="https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=2080&auto=format&fit=crop"
+            dropRadius={30}
+            perturbance={0.05}
+            resolution={1024}
         >
-            <div className="absolute inset-0 bg-black/30" />
+            <div className="absolute inset-0 bg-black/40" />
         </WaterWrapper>
       </motion.div>
 
@@ -76,7 +77,7 @@ export function Hero() {
         <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-            className="w-[1px] h-12 bg-white/50"
+            className="w-px h-12 bg-white/50"
         />
       </motion.div>
     </div>

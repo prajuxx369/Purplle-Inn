@@ -4,6 +4,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
 
+import Image from "next/image";
+
 interface PageHeroProps {
   title: string;
   subtitle?: string;
@@ -15,11 +17,15 @@ export function PageHero({ title, subtitle, image }: PageHeroProps) {
     <div className="relative h-[60vh] w-full overflow-hidden flex items-center justify-center">
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('${image}')` }}
+        <Image
+          src={image}
+          alt={title}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/40 dark:bg-black/60" />
+        <div className="absolute inset-0 bg-black/40 dark:bg-black/60 transition-colors duration-300" />
       </div>
 
       {/* Content */}

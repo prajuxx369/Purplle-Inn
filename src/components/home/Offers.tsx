@@ -11,13 +11,13 @@ const offers = [
     title: "Weekend Getaway",
     description: "Enjoy a relaxing weekend with complimentary breakfast and late checkout.",
     discount: "20% OFF",
-    bg: "bg-purple-100",
+    bg: "bg-purple-100 dark:bg-purple-900/40",
   },
   {
     title: "Corporate Stay",
     description: "Tailored for business travelers. Includes Wi-Fi, workspace, and meeting room access.",
     discount: "Special Rate",
-    bg: "bg-stone-100",
+    bg: "bg-stone-100 dark:bg-stone-800/60",
   },
 ];
 
@@ -59,16 +59,16 @@ function CardOffer({ title, description, discount, bg }: { title: string, descri
         <span className="inline-block px-4 py-1 bg-stone-900 text-white text-xs uppercase tracking-widest rounded-full mb-6">
             {discount}
         </span>
-        <h3 className="text-3xl md:text-4xl font-serif font-bold text-stone-900 mb-4">
+        <h3 className="text-3xl md:text-4xl font-serif font-bold text-stone-900 dark:text-white mb-4">
             {title}
         </h3>
-        <p className="text-stone-600 max-w-sm">
+        <p className="text-stone-600 dark:text-stone-300 max-w-sm">
             {description}
         </p>
       </div>
 
       <div style={{ transform: "translateZ(30px)" }} className="flex justify-end">
-          <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg text-stone-900">
+          <div className="w-12 h-12 bg-white dark:bg-stone-800 rounded-full flex items-center justify-center shadow-lg text-stone-900 dark:text-white">
              <span className="text-2xl">→</span>
           </div>
       </div>
@@ -81,8 +81,8 @@ export function Offers() {
     <SectionWrapper>
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
         <div>
-           <span className="text-purple-800 uppercase tracking-widest text-xs font-bold mb-2 block">Exclusive Deals</span>
-           <AnimatedHeading text="Offers & Packages" className="text-4xl md:text-5xl text-stone-900" />
+           <span className="text-purple-800 dark:text-purple-400 uppercase tracking-widest text-xs font-bold mb-2 block">Exclusive Deals</span>
+           <AnimatedHeading text="Offers & Packages" className="text-4xl md:text-5xl text-stone-900 dark:text-white" />
         </div>
         <Button href="/offers" variant="outline">View All Offers</Button>
       </div>

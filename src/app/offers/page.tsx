@@ -4,6 +4,7 @@ import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
+import { PageHero } from "@/components/PageHero";
 
 const offers = [
   {
@@ -38,33 +39,35 @@ const offers = [
 
 export default function OffersPage() {
   return (
-    <main className="min-h-screen bg-stone-50">
+    <main className="min-h-screen bg-stone-50 dark:bg-stone-950 transition-colors duration-300">
       <Header />
 
-      <div className="pt-32 pb-12 px-4 text-center">
-          <span className="text-sm uppercase tracking-widest mb-4 block text-purple-800 font-bold">Exclusive Deals</span>
-          <AnimatedHeading text="Offers & Packages" as="h1" className="text-5xl md:text-6xl font-bold text-stone-900" />
-      </div>
+      <PageHero 
+        title="Offers & Packages"
+        subtitle="Exclusive deals and curated packages for an unforgettable stay."
+        image="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=2070&auto=format&fit=crop"
+      />
 
       <SectionWrapper>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {offers.map((offer, index) => (
-                  <div key={index} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-stone-100 flex flex-col">
+                  <div key={index} className="bg-white dark:bg-stone-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-100 dark:border-stone-800 flex flex-col">
                       <div className="relative h-64 w-full">
                           <Image
                              src={offer.image}
                              alt={offer.title}
                              fill
+                             sizes="(max-width: 768px) 100vw, 50vw"
                              className="object-cover"
                           />
-                          <div className="absolute top-4 left-4 bg-purple-900 text-white text-xs font-bold px-3 py-1 uppercase tracking-widest rounded-sm">
+                          <div className="absolute top-4 left-4 bg-purple-900 dark:bg-purple-600 text-white text-xs font-bold px-3 py-1 uppercase tracking-widest rounded-sm">
                               {offer.code}
                           </div>
                       </div>
-                      <div className="p-8 flex flex-col flex-grow">
-                          <span className="text-xs text-stone-500 uppercase tracking-wider mb-2">{offer.validity}</span>
-                          <h3 className="text-2xl font-serif font-bold text-stone-900 mb-4">{offer.title}</h3>
-                          <p className="text-stone-600 mb-8 flex-grow">
+                       <div className="p-8 flex flex-col grow">
+                          <span className="text-xs text-stone-500 dark:text-stone-400 uppercase tracking-wider mb-2">{offer.validity}</span>
+                          <h3 className="text-2xl font-serif font-bold text-stone-900 dark:text-white mb-4">{offer.title}</h3>
+                          <p className="text-stone-600 dark:text-stone-400 mb-8 grow">
                               {offer.description}
                           </p>
                           <Button className="w-full justify-center">Book Now</Button>

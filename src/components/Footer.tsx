@@ -9,7 +9,7 @@ export function Footer() {
   return (
     <footer className="bg-stone-900 text-stone-300 py-20 px-4 md:px-8 relative overflow-hidden">
         {/* Simple gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-purple-900/10 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-linear-to-t from-purple-900/10 to-transparent pointer-events-none" />
 
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
@@ -40,7 +40,7 @@ export function Footer() {
               {["About Us", "Rooms & Suites", "Dining", "Offers", "Gallery", "Contact"].map((item) => (
                 <li key={item}>
                   <Link href="#" className="hover:text-white transition-colors flex items-center gap-2 group">
-                     <span className="w-0 group-hover:w-2 h-[1px] bg-purple-500 transition-all duration-300" />
+                     <span className="w-0 group-hover:w-2 h-px bg-purple-500 transition-all duration-300" />
                      {item}
                   </Link>
                 </li>
@@ -73,7 +73,7 @@ export function Footer() {
               <input
                 type="email"
                 placeholder="Your email address"
-                className="bg-stone-800 border-none p-3 text-stone-200 focus:ring-1 focus:ring-purple-500 outline-none w-full"
+                className="bg-stone-800 dark:bg-stone-900 border-none p-3 text-stone-200 focus:ring-1 focus:ring-purple-500 outline-none w-full"
               />
               <button className="bg-purple-900 text-white py-3 uppercase text-xs tracking-widest hover:bg-purple-800 transition-colors">
                 Subscribe

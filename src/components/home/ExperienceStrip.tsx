@@ -45,12 +45,13 @@ export function ExperienceStrip() {
                     src={exp.image}
                     alt={exp.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
                 />
             </div>
 
             {/* Overlay */}
-            <div className={cn("absolute inset-0 bg-gradient-to-b transition-opacity duration-500 opacity-60 group-hover:opacity-80", exp.color)} />
+            <div className={cn("absolute inset-0 bg-linear-to-b transition-opacity duration-500 opacity-60 group-hover:opacity-80", exp.color)} />
 
             {/* Content */}
             <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">

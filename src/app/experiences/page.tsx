@@ -57,12 +57,13 @@ export default function ExperiencesPage() {
               className={`flex flex-col ${item.reverse ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-12 lg:gap-24 mb-24 last:mb-0`}
             >
               <div className="flex-1 w-full lg:w-1/2 relative group">
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                <div className="relative aspect-4/3 rounded-2xl overflow-hidden shadow-2xl">
                     <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
                     <Image
                         src={item.image}
                         alt={item.title}
                         fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                 </div>
