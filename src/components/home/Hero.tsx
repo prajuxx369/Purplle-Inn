@@ -26,67 +26,45 @@ export function Hero() {
       >
         <WaterWrapper
             imageUrl="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop"
-            dropRadius={35}
-            perturbance={0.12}
-            resolution={2048}
+            dropRadius={25}
+            perturbance={0.04}
+            resolution={512}
         >
-            <div className="absolute inset-0 bg-black/30 pointer-events-none" />
+            <div className="absolute inset-0 bg-black/40 dark:bg-black/60 transition-colors duration-300 pointer-events-none" />
+            
+            {/* Content moved inside WaterWrapper for full-area interaction */}
+            <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 text-white">
+                <AnimatedHeading
+                    text="Purplle Inn"
+                    as="h1"
+                    className="text-5xl md:text-7xl lg:text-9xl font-bold mb-6 text-white"
+                />
+
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8, duration: 0.8 }}
+                  className="text-lg md:text-2xl font-light tracking-wide mb-10 max-w-2xl"
+                >
+                  Modern Comfort. Timeless Hospitality.
+                </motion.p>
+
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 1.2, duration: 0.6 }}
+                  className="flex flex-col md:flex-row gap-6"
+                >
+                    <Button href="/rooms" variant="primary" className="bg-white text-stone-900 hover:bg-stone-200">
+                        Book a Stay
+                    </Button>
+                    <Button href="/rooms" variant="outline" className="text-white border-white hover:bg-white hover:text-stone-900">
+                        View Rooms
+                    </Button>
+                </motion.div>
+            </div>
         </WaterWrapper>
       </motion.div>
-
-      {/* Content */}
-      <div className="relative z-10 h-full flex flex-col md:flex-row items-center justify-center gap-12 px-8 md:px-16 text-white max-w-7xl mx-auto">
-        <div className="flex-1 text-center md:text-left">
-            <AnimatedHeading
-                text="Purplle Inn"
-                as="h1"
-                className="text-5xl md:text-8xl lg:text-9xl font-bold mb-6 text-white"
-            />
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
-              className="text-lg md:text-2xl font-light tracking-wide mb-10 max-w-2xl"
-            >
-              Modern Comfort. Timeless Hospitality.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.2, duration: 0.6 }}
-              className="flex flex-col md:flex-row gap-6 justify-center md:justify-start"
-            >
-                <Button href="/rooms" variant="primary" className="bg-white text-stone-900 hover:bg-stone-200">
-                    Book a Stay
-                </Button>
-                <Button href="/rooms" variant="outline" className="text-white border-white hover:bg-white hover:text-stone-900">
-                    View Rooms
-                </Button>
-            </motion.div>
-        </div>
-
-        {/* Front Image with Water Effect */}
-        <motion.div
-            initial={{ opacity: 0, x: 100, rotate: 5 }}
-            animate={{ opacity: 1, x: 0, rotate: 0 }}
-            transition={{ delay: 1.5, duration: 1, ease: "easeOut" }}
-            className="hidden lg:block flex-1 relative aspect-square max-w-md"
-        >
-            <div className="absolute inset-0 border-2 border-white/20 -translate-x-4 translate-y-4 rounded-2xl z-0" />
-            <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl z-10">
-                <WaterWrapper
-                    imageUrl="https://images.unsplash.com/photo-1544124499-58912cbddaad?q=80&w=2070&auto=format&fit=crop"
-                    dropRadius={25}
-                    perturbance={0.05}
-                    resolution={512}
-                >
-                    <div className="absolute inset-0 bg-stone-900/10 pointer-events-none" />
-                </WaterWrapper>
-            </div>
-        </motion.div>
-      </div>
 
       {/* Scroll indicator */}
       <motion.div
