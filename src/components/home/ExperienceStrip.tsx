@@ -4,25 +4,26 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { WaterWrapper } from "@/components/ui/WaterWrapper";
 
 const experiences = [
   {
-    title: "Fine Dining",
-    description: "Savor exquisite culinary delights prepared by world-class chefs.",
-    image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070&auto=format&fit=crop",
-    color: "from-purple-900/80 to-stone-900/80",
+    title: "Epicurean Journey",
+    description: "A symphony of flavors crafted by our Michelin-starred culinary team.",
+    image: "https://images.unsplash.com/photo-1550966842-28df54889c2c?q=80&w=2070&auto=format&fit=crop",
+    color: "from-stone-900/40 to-stone-900/80",
   },
   {
-    title: "Prime Location",
-    description: "Nestled in the city's vibrant heart, moments from culture and commerce.",
-    image: "https://images.unsplash.com/photo-1449824913929-2b3a3e3dbaf0?q=80&w=2070&auto=format&fit=crop",
-    color: "from-blue-900/80 to-stone-900/80",
+    title: "Skyline Serenity",
+    description: "Find your peace amidst the urban rush in our rooftop sanctuary.",
+    image: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=2070&auto=format&fit=crop",
+    color: "from-stone-900/40 to-stone-900/80",
   },
   {
-    title: "Cozy Ambience",
-    description: "Unwind in spaces designed for tranquility and understated luxury.",
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop",
-    color: "from-stone-900/80 to-stone-900/90",
+    title: "Grand Atrium",
+    description: "Experience the majestic architecture of our iconic light-filled lobby.",
+    image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=2070&auto=format&fit=crop",
+    color: "from-stone-900/40 to-stone-900/80",
   },
 ];
 
@@ -39,15 +40,15 @@ export function ExperienceStrip() {
             transition={{ delay: index * 0.2, duration: 1 }}
             className="relative flex-1 group overflow-hidden border-b md:border-b-0 md:border-r border-white/10 last:border-0 min-h-[400px]"
           >
-            {/* Background Image */}
-            <div className="absolute inset-0 transition-transform duration-1000 group-hover:scale-110">
-                <Image
-                    src={exp.image}
-                    alt={exp.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover"
-                />
+            <div className="absolute inset-0">
+                <WaterWrapper
+                  imageUrl={exp.image}
+                  dropRadius={25}
+                  perturbance={0.04}
+                  resolution={512}
+                >
+                  <div className="absolute inset-0 bg-transparent pointer-events-none" />
+                </WaterWrapper>
             </div>
 
             {/* Overlay */}

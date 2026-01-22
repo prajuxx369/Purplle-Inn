@@ -17,9 +17,9 @@ interface WaterWrapperProps {
 
 export function WaterWrapper({
   imageUrl,
-  dropRadius = 20,
-  perturbance = 0.04,
-  resolution = 256,
+  dropRadius = 30,
+  perturbance = 0.07,
+  resolution = 1024,
   children,
   className,
 }: WaterWrapperProps) {
@@ -30,10 +30,10 @@ export function WaterWrapper({
         dropRadius={dropRadius}
         perturbance={perturbance}
         resolution={resolution}
-        style={{ width: "100%", height: "100%", backgroundSize: "cover" }}
+        style={{ width: "100%", height: "100%", backgroundSize: "cover", backgroundPosition: "center" }}
       >
-        {({ pause, play }: { pause: () => void; play: () => void }) => (
-          <div className="w-full h-full relative">
+        {(props: any) => (
+          <div ref={props.container} className="w-full h-full relative z-10 cursor-pointer">
             {children}
           </div>
         )}

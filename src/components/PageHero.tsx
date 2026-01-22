@@ -3,8 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
-
-import Image from "next/image";
+import { WaterWrapper } from "@/components/ui/WaterWrapper";
 
 interface PageHeroProps {
   title: string;
@@ -17,15 +16,14 @@ export function PageHero({ title, subtitle, image }: PageHeroProps) {
     <div className="relative h-[60vh] w-full overflow-hidden flex items-center justify-center">
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src={image}
-          alt={title}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-black/40 dark:bg-black/60 transition-colors duration-300" />
+        <WaterWrapper
+          imageUrl={image}
+          dropRadius={25}
+          perturbance={0.04}
+          resolution={512}
+        >
+          <div className="absolute inset-0 bg-black/40 dark:bg-black/60 transition-colors duration-300 pointer-events-none" />
+        </WaterWrapper>
       </div>
 
       {/* Content */}

@@ -6,6 +6,7 @@ import { MapPin, Plane, Train, Navigation } from "lucide-react";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
 import { Button } from "@/components/ui/Button";
+import { WaterWrapper } from "@/components/ui/WaterWrapper";
 
 const nearby = [
   { icon: Plane, label: "Airport", distance: "15 km" },
@@ -16,13 +17,17 @@ const nearby = [
 export function Location() {
   return (
     <section className="relative py-24 overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop')" }}
-      />
-      {/* Dark Overlays (Gradient) */}
-      <div className="absolute inset-0 z-10 bg-linear-to-r from-stone-900 via-stone-900/80 to-stone-900/40 dark:from-black dark:via-black/90 dark:to-transparent" />
+      {/* Background Image with Water Effect */}
+      <div className="absolute inset-0 z-0">
+        <WaterWrapper
+            imageUrl="https://images.unsplash.com/photo-1549415472-612660a1ee0b?q=80&w=2070&auto=format&fit=crop"
+            dropRadius={25}
+            perturbance={0.05}
+            resolution={512}
+        >
+            <div className="absolute inset-0 bg-linear-to-r from-stone-900 via-stone-900/80 to-stone-900/40 dark:from-black dark:via-black/90 dark:to-transparent pointer-events-none" />
+        </WaterWrapper>
+      </div>
       
       <div className="container mx-auto px-4 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
